@@ -57,3 +57,20 @@ It is not the scored record. Outcomes, Brier scores and resolutions live on the
 site, because they change as markets settle and this file does not. This is the
 evidence that a forecast existed and said what it says, at a time Crossbook
 could not have chosen.
+
+## Late and held entries
+
+**Late entries.** 70 forecasts published on crossbook.tech between
+1 September 2026 and 2 November 2026 were not committed here when they were published: the site
+started the commit after responding, and its server often stopped before the
+commit finished. They were added afterwards in a commit whose message begins
+`late:`. For those lines the GitHub timestamp proves nothing; `published_at`
+is the site's own date. Any commit beginning `late:` means the same thing. The
+site now checks every hour that each published call is here.
+
+**Held entries.** t-0192, t-0193, t-0199, t-0203, t-0204, t-0206, t-0207, t-0210, t-0224, t-0227 are forecasts Crossbook made
+but held back because each was further from the market price than its
+category's limit allows. A bug committed them here anyway. They are not on
+crossbook.tech's public record and are not scored. They stay in this file
+because it is append-only: removing lines is the edit this repo exists to rule
+out.
