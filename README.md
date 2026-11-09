@@ -49,7 +49,27 @@ falsifier     what would show the forecast was wrong
 ```
 
 Nothing appears here that is not already public at
-[crossbook.tech/record](https://crossbook.tech/record).
+[crossbook.tech/record](https://crossbook.tech/record), with one stated
+exception below.
+
+## The `c-` entries
+
+Entries whose `public_id` starts with `c-` (c-0001 onward, first committed
+November 8, 2026) are a separate test, not the main Crossbook forecaster. They
+are logged here first and may appear on crossbook.tech later or not at all.
+
+- They are made by Claude agents, not the pipeline that produces the `t-`
+  entries. `generation_method` is `claude-agent-price-blind`.
+- One agent gathers sourced facts with every prediction-market and betting price
+  removed. A second agent forecasts from those facts alone and never sees a
+  market price. The market price is pulled only afterwards, to decide whether
+  the disagreement clears the 3-point floor.
+- They are not blended with the market price (`blend_share` is 0), unlike
+  recent `t-` entries.
+- They should be scored as their own group, not pooled into the main record.
+
+Each was committed before its event resolved, so the GitHub timestamp is
+independent evidence for these entries too.
 
 ## What this repo is not
 
